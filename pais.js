@@ -41,6 +41,21 @@ const listaPais = () => {
 }
 
 const atualizaPais = () => {
+    listaPais();
 
+    if(paises.length > 0) {
+        const indice = prompt("Digite o índice do país que deseja atualizar: ");
+
+        if(indice >= 0 && indice < paises.length) {
+            const pais = modelo();
+
+            if(pais != undefined) {
+                paises[indice] = pais;
+            }
+        }
+        else {
+            console.log("Índice inválido.")
+        }
+    }
 }
 
