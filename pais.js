@@ -73,10 +73,16 @@ const atualizaPais = () => {
 
 const removePais = () => {
         const indice = leIndice()
-        
+
         if(indice != undefined){
             paises.splice(indice, 1)        
             console.log("País removido com sucesso.")
         }
 }
 
+module.exports = {
+    criaPais,
+    listaPais,
+    atualizaPais,
+    removePais
+}
