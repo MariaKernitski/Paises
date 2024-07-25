@@ -62,13 +62,14 @@ const atualizaPais = () => {
  
     const indice = leIndice();
 
-        if(pais != undefined) {
+        if(indice != undefined) {
             const pais = modelo();
-            paises[indice] = pais;
+            if (pais != undefined){  
+                paises[indice] = pais;
+                console.log("País atualizado com sucesso!")
+            }
         }
-        else {
-            console.log("Índice inválido.")
-        }
+
 }
 
 const removePais = () => {
