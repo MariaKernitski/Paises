@@ -4,6 +4,24 @@ const paises = []
 
 const valida = pais => pais.nome == "" && pais.sigla.length == 2
 
+const leIndice = () => {
+    listaPais();
+
+    if(paises.length > 0) {
+        const indice = prompt("Digite o índice do país que deseja atualizar/remover: ") - 1;
+
+        if(indice >= 0 && indice < paises.length) {
+
+            return indice;
+
+            }
+
+        else {
+            console.log("Índice inválido.")
+        }
+    }
+}
+
 const modelo = () => {
 
     let nome = prompt("Digite o nome do país: ")
@@ -41,21 +59,24 @@ const listaPais = () => {
 }
 
 const atualizaPais = () => {
-    listaPais();
+ 
+    const indice = leIndice();
 
-    if(paises.length > 0) {
-        const indice = prompt("Digite o índice do país que deseja atualizar: ");
-
-        if(indice >= 0 && indice < paises.length) {
+        if(pais != undefined) {
             const pais = modelo();
-
-            if(pais != undefined) {
-                paises[indice] = pais;
-            }
+            paises[indice] = pais;
         }
         else {
             console.log("Índice inválido.")
         }
-    }
+}
+
+const removePais = () => {
+        const indice = leIndice()
+        
+        if(indice != undefined){
+            paises.splice(indice, 1)        
+            console.log("País removido com sucesso.")
+        }
 }
 
