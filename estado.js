@@ -1,5 +1,5 @@
 const { listaPais } = require("./pais.js");
-const { leIndice } = require("./pais.js");
+const { leIndicePais } = require("./pais.js");
 
 const prompt = require("prompt-sync")();
 
@@ -29,14 +29,13 @@ const modelo = () => {
 
     let nome = prompt("Digite o nome do estado: ")
     let sigla = prompt("Digite a sigla do estado: ").toUpperCase()
-    const pais = leIndice();
+    const pais = leIndicePais();
 
     listaPais()
 
     if (valida({nome, sigla, pais})) {
         return {nome, sigla, pais}
     }
-
 }
 
 const criaEstado = () => {
