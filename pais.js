@@ -4,7 +4,7 @@ const paises = []
 
 const valida = pais => pais.nome == "" && pais.sigla.length == 2
 
-const leIndice = () => {
+const leIndicePais = () => {
     listaPais();
 
     if(paises.length > 0) {
@@ -60,19 +60,20 @@ const listaPais = () => {
 
 const atualizaPais = () => {
  
-    const indice = leIndice();
+    const indice = leIndicePais();
 
-        if(pais != undefined) {
+        if(indice != undefined) {
             const pais = modelo();
-            paises[indice] = pais;
+            if (pais != undefined){  
+                paises[indice] = pais;
+                console.log("País atualizado com sucesso!")
+            }
         }
-        else {
-            console.log("Índice inválido.")
-        }
+
 }
 
 const removePais = () => {
-        const indice = leIndice()
+        const indice = leIndicePais()
 
         if(indice != undefined){
             paises.splice(indice, 1)        
